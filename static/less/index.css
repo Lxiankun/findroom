@@ -1,4 +1,72 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.box {
+  width: 100%;
+  max-width: 600px;
+}
+.box header {
+  width: 100%;
+  height: 5rem;
+  padding: 0.5rem 4rem;
+  display: flex;
+  background-color: #ff8a00;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box header .title {
+  flex: 1;
+}
+.box header .title > img {
+  height: 100%;
+}
+.box header .icon {
+  width: 10rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.box header .icon a {
+  width: 3rem;
+  height: 3.4rem;
+}
+.box header .icon a img {
+  width: 100%;
+  height: 100%;
+}
+.box section {
+  width: 100%;
+  height: 16rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.box section .search {
+  width: 100%;
+  height: 3rem;
+  background: url("../img/banner.png") 0 0 no-repeat;
+  position: relative;
+}
+.box section .search .ion {
+  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.box section .search .ion img {
+  width: 100%;
+  height: 100%;
+}
+.box section .search input {
+  width: 100%;
+  height: 100%;
+  text-indent: 3rem;
 }

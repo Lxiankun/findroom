@@ -16,7 +16,7 @@ header {
 header .title {
   flex: 1;
 }
-header .title img {
+header .title > img {
   height: 100%;
 }
 header .icon {
