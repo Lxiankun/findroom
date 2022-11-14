@@ -8,6 +8,8 @@
 .box {
   width: 100%;
   max-width: 600px;
+  min-width: 250px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -320,6 +322,7 @@
   left: 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   background-color: rgba(99, 98, 98, 0.218);
 }
 .box .add .down_left {
