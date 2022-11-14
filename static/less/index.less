@@ -3,76 +3,351 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
-.df(@kk:space-between){
+.df(@kk: space-between) {
     display: flex;
     flex-direction: row;
     justify-content: @kk;
 }
-.box{
+
+.box {
     width: 100%;
     max-width: 600px;
-    header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    header {
         width: 100%;
         height: 5rem;
-        padding: .5rem 4rem;
+        padding: .5rem 3rem;
         display: flex;
         background-color: #ff8a00;
         flex-direction: row;
         justify-content: space-between;
-        
-        .title{
+        font-size: 1.2rem;
+
+        .title {
             flex: 1;
-            &>img{
+
+            &>img {
                 height: 100%;
             }
         }
-        .icon{
+
+        .icon {
             width: 10rem;
             height: 100%;
             .df(space-around);
-            a{
+
+            a {
                 width: 3rem;
                 height: 3.4rem;
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
         }
     }
-    section{
-        width: 100%;
-        height: 16rem;
-        padding: 1rem 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
 
-        .search{
+    main {
+        flex: 1;
+        width: 100%;
+background-color: #f5f5f5;
+        section {
             width: 100%;
-            height: 3rem;
-            background: url("../img/banner.png") 0 0 no-repeat;
-            position: relative;
-            .ion{
-                padding: .5rem;
-                width: 3rem;
-                height: 3rem;
-                position: absolute;
-                left: 0;
-                top: 0;
-                img{
+            height: 25rem;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            background: url("../img/index/banner.png") no-repeat;
+            background-size: cover;
+
+            .search {
+                width: 100%;
+                height: 4rem;
+                font-size: 1.2rem;
+                position: relative;
+
+                .ion {
+                    padding: 1rem;
+                    width: 4rem;
+                    height: 4rem;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                input {
                     width: 100%;
                     height: 100%;
+                    text-indent: 4rem;
+                    border: 1px solid transparent;
+                    outline: none;
+                    border-radius: .5rem;
                 }
             }
-            input{
-                width: 100%;
+        }
+
+        /* 买房当航 二手房  新房*/
+        nav {
+            width: 100%;
+            height: 12rem;
+            .df(space-around);
+
+            background-color: #ff8a00;
+
+            a {
+                width: 6.4rem;
                 height: 100%;
-                text-indent: 3rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+                align-content: center;
+
+                img {
+                    width: 100%;
+                }
+
+                span {
+                    font-size: 1.4rem;
+                    height: 3rem;
+                    line-height: 3rem;
+                    width: 100%;
+                    color: #fff;
+
+                }
             }
         }
+
+        /* 导航下的banner2 */
+        .banner2 {
+            width: 100%;
+            height: 25rem;
+            background: url("../img/index/banner2.png") no-repeat;
+            background-size: cover;
+        }
+
+        /* 标题 热门房源  */
+        h2 {
+            width: 100%;
+            background-color: #ff8a00;
+            height: 7rem;
+            padding: 1rem 2rem;
+            color: #fff;
+            
+            strong {
+                // margin-top:;
+                font-size: 2rem;
+            }
+
+            span {
+                font-size: 1.2rem;
+            }
+        }
+
+        .hothouse {
+            background-color: #fff;
+            width: 100%;
+            padding: 1rem 2rem;
+            .df;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            li {
+                width: 100%;
+                box-sizing: border-box;
+                height: 16rem;
+                padding: 2rem 0;
+                // padding-right: 1rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: 1px solid red;
+                &:nth-last-of-type(1){
+                    border-bottom:none;
+                }
+                img {
+                    height: 90%;
+                }
+
+                .house_info {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    min-width: 0;
+                    margin-left: 1rem;
+                    height: 100%;
+                    h3 {
+                        
+                        width: 100%;
+                        
+                        font-size: 2rem;
+                        line-height: 3rem;
+                        height: 3rem;
+                        // overflow: hidden;
+                        // white-space: nowrap;
+                        // text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+
+                    p {
+                        width: 100%;
+                        height: 3rem;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        line-height: 3rem;
+
+                        strong {
+                            color: #ff8a00;
+                            font-weight: 600;
+                            font-size: 1.4rem;
+                        }
+
+                        span {
+                            font-size: 1.4rem;
+                        }
+
+                        &.info2 {
+                            span {
+                                color: #8b8b8b;
+                            }
+                        }
+                    }
+
+                    .type_tag {
+                        width: 100%;
+                        height: 3rem;
+                        line-height: 3rem;
+                        a {
+                            color: #849aae;
+                            background: #f4f7f9;
+                            padding: 0 .3rem;
+                            font-size: 1.4rem;
+
+                        }
+                    }
+                }
+            }
+        }
+        .under_bar{
+            background-color: #fff;
+            width: 100%;
+            .bars{
+                width: 100%;
+                height: 4rem;
+                // padding: 0 1rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                border-bottom: 1px solid #ff8a00;;
+                a{
+                    width: 50%;
+                    height: 4rem;
+                    color: #8b8b8b;
+                    line-height: 4rem;
+                    font-size: 1.8rem;
+                    text-align: center;
+                }
+                .active{
+                    column-rule: #ff8a00;
+                    border-bottom: 2px solid #ff8a00;
+                }
+            }
+            .tabs{
+                width: 100%;
+                
+            }
+        }
+    }
+
+    /* 页尾 */
+    footer {
+        width: 100%;
+        background-color: #2f3130;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+
+        >p {
+            width: 100%;
+            height: 4.5rem;
+            font-size: 1.6rem;
+            color: #939494;
+            font-weight: bold;
+            line-height: 4.5rem;
+            border-bottom: 1px solid #3e403f;
+            box-sizing: border-box;
+
+            >a {
+                color: #939494;
+            }
+        }
+
+        >div:nth-of-type(1) {
+            width: 100%;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+
+            >div {
+                flex: 1;
+                display: flex;
+                font-size: 1.4rem;
+                color: #939494;
+                margin-left: 1rem;
+
+                >img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+
+        >div:nth-of-type(2) {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            color: #939494;
+            margin-top: 1rem;
+
+            >p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .add {
+        width: 100%;
+        height: 5rem;
+        background-color: #ff8a00;
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
 }
