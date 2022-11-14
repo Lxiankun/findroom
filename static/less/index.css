@@ -3,19 +3,26 @@
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .box {
   width: 100%;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* 页尾 */
 }
 .box header {
   width: 100%;
   height: 5rem;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 3rem;
   display: flex;
   background-color: #ff8a00;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 1.2rem;
 }
 .box header .title {
   flex: 1;
@@ -38,35 +45,259 @@
   width: 100%;
   height: 100%;
 }
-.box section {
+.box main {
+  flex: 1;
   width: 100%;
-  height: 16rem;
+  background-color: #f5f5f5;
+  /* 买房当航 二手房  新房*/
+  /* 导航下的banner2 */
+  /* 标题 热门房源  */
+}
+.box main section {
+  width: 100%;
+  height: 25rem;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
+  background: url("../img/index/banner.png") no-repeat;
+  background-size: cover;
 }
-.box section .search {
+.box main section .search {
   width: 100%;
-  height: 3rem;
-  background: url("../img/banner.png") 0 0 no-repeat;
+  height: 4rem;
+  font-size: 1.2rem;
   position: relative;
 }
-.box section .search .ion {
-  padding: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+.box main section .search .ion {
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
   left: 0;
   top: 0;
 }
-.box section .search .ion img {
+.box main section .search .ion img {
   width: 100%;
   height: 100%;
 }
-.box section .search input {
+.box main section .search input {
   width: 100%;
   height: 100%;
-  text-indent: 3rem;
+  text-indent: 4rem;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 0.5rem;
+}
+.box main nav {
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #ff8a00;
+}
+.box main nav a {
+  width: 6.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+.box main nav a img {
+  width: 100%;
+}
+.box main nav a span {
+  font-size: 1.4rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  color: #fff;
+}
+.box main .banner2 {
+  width: 100%;
+  height: 25rem;
+  background: url("../img/index/banner2.png") no-repeat;
+  background-size: cover;
+}
+.box main h2 {
+  width: 100%;
+  background-color: #ff8a00;
+  height: 7rem;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+.box main h2 strong {
+  font-size: 2rem;
+}
+.box main h2 span {
+  font-size: 1.2rem;
+}
+.box main .hothouse {
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.box main .hothouse li {
+  width: 100%;
+  box-sizing: border-box;
+  height: 16rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid red;
+}
+.box main .hothouse li:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.box main .hothouse li img {
+  height: 90%;
+}
+.box main .hothouse li .house_info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin-left: 1rem;
+  height: 100%;
+}
+.box main .hothouse li .house_info h3 {
+  width: 100%;
+  font-size: 2rem;
+  line-height: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.box main .hothouse li .house_info p {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 3rem;
+}
+.box main .hothouse li .house_info p strong {
+  color: #ff8a00;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.box main .hothouse li .house_info p span {
+  font-size: 1.4rem;
+}
+.box main .hothouse li .house_info p.info2 span {
+  color: #8b8b8b;
+}
+.box main .hothouse li .house_info .type_tag {
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+}
+.box main .hothouse li .house_info .type_tag a {
+  color: #849aae;
+  background: #f4f7f9;
+  padding: 0 0.3rem;
+  font-size: 1.4rem;
+}
+.box main .under_bar {
+  background-color: #fff;
+  width: 100%;
+}
+.box main .under_bar .bars {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ff8a00;
+}
+.box main .under_bar .bars a {
+  width: 50%;
+  height: 4rem;
+  color: #8b8b8b;
+  line-height: 4rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.box main .under_bar .bars .active {
+  column-rule: #ff8a00;
+  border-bottom: 2px solid #ff8a00;
+}
+.box main .under_bar .tabs {
+  width: 100%;
+}
+.box footer {
+  width: 100%;
+  background-color: #2f3130;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.box footer > p {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  color: #939494;
+  font-weight: bold;
+  line-height: 4.5rem;
+  border-bottom: 1px solid #3e403f;
+  box-sizing: border-box;
+}
+.box footer > p > a {
+  color: #939494;
+}
+.box footer > div:nth-of-type(1) {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+.box footer > div:nth-of-type(1) > div {
+  flex: 1;
+  display: flex;
+  font-size: 1.4rem;
+  color: #939494;
+  margin-left: 1rem;
+}
+.box footer > div:nth-of-type(1) > div > img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1.5rem;
+}
+.box footer > div:nth-of-type(2) {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #939494;
+  margin-top: 1rem;
+}
+.box footer > div:nth-of-type(2) > p {
+  margin-bottom: 0.5rem;
+}
+.box .add {
+  width: 100%;
+  height: 5rem;
+  background-color: #ff8a00;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
