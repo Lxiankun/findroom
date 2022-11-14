@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 10px;
+  background-color: #f5f5f5;
+}
+.box {
+  max-width: 625px;
+  min-width: 300px;
+  margin: 0 auto;
+  /* 头部 */
+  /* 主体 */
+}
+.box header {
+  width: 100%;
+  height: 22rem;
+  background: url(../img/my/bg1.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.box header > a {
+  width: 3rem;
+  height: 3.4rem;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box header > a > img {
+  width: 2rem;
+  height: 2.4rem;
+}
+.box header > a:nth-of-type(1) {
+  position: absolute;
+  top: 1.6rem;
+  right: 8rem;
+}
+.box header > a:nth-of-type(2) {
+  position: absolute;
+  top: 1.6rem;
+  right: 2rem;
+}
+.box header > img {
+  width: 6.2rem;
+  height: 6.2rem;
+}
+.box header > div {
+  width: 8rem;
+  height: 3.5rem;
+  border: 1px solid white;
+  box-sizing: border-box;
+  line-height: 3.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.box header > div > a {
+  font-size: 1.4rem;
+  color: white;
+}
+.box main {
+  width: 100%;
+}
+.box main > ul {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 1.5rem;
+}
+.box main > ul > li {
+  width: 100%;
+  height: 5rem;
+  border-bottom: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: url(../img/my/right.png) no-repeat right center;
+  background-size: 0.7rem;
+}
+.box main > ul > li > img {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 1rem;
+}
+.box main > ul > li > a {
+  color: #666666;
+  font-size: 1.4rem;
+}
