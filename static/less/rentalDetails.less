@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 10px;
+    background-color: #f5f5f5;
+}
+
+.box {
+    max-width: 625px;
+    min-width: 300px;
+    margin: 0 auto;
+
+    .df(@kk: space-between) {
+        display: flex;
+        flex-direction: row;
+        justify-content: @kk;
+    }
+
+    /* 头部 */
+    header {
+        width: 100%;
+        height: 5rem;
+        padding: .5rem 4rem;
+        display: flex;
+        background-color: #ff8a00;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .title {
+            flex: 1;
+
+            &>img {
+                height: 100%;
+            }
+        }
+
+        .icon {
+            width: 10rem;
+            height: 100%;
+            .df(space-around);
+
+            a {
+                width: 3rem;
+                height: 3.4rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    /* 主体 */
+    main {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        >div:nth-of-type(1) {
+            width: 100%;
+            padding: 0 2rem;
+            height: 4rem;
+            line-height: 4rem;
+            font-size: 1.4rem;
+            background-color: white;
+            border-bottom: 1px solid #c5c5c5;
+            box-sizing: border-box;
+
+            >span {
+                >a {
+                    color: black;
+                }
+
+
+            }
+
+            >span:nth-of-type(1) {
+                >a:nth-of-type(1) {
+                    font-weight: bold;
+                }
+            }
+
+
+        }
+
+        /* 分享 */
+        >div:nth-of-type(2) {
+            width: 100%;
+            position: relative;
+
+            >img {
+                width: 100%;
+            }
+
+            >span {
+                position: absolute;
+                bottom: 2.6rem;
+                right: 0rem;
+                display: block;
+                width: 7rem;
+                height: 4rem;
+                text-align: center;
+                height: 4rem;
+                line-height: 4rem;
+                font-size: 1.4rem;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 0.6rem 0 0 0.6rem;
+            }
+        }
+
+        >div:nth-of-type(3) {
+            width: 100%;
+            height: 8rem;
+            border-bottom: 1px solid #dcdcdc;
+            box-sizing: border-box;
+            display: flex;
+            font-size: 1.4rem;
+            background-color: white;
+
+            >div:nth-of-type(1) {
+                display: flex;
+                align-items: center;
+                flex: 3;
+                border-right: 1px solid #dcdcdc;
+                box-sizing: border-box;
+                padding-left: 2rem;
+                box-sizing: border-box;
+            }
+
+            >div:nth-of-type(2) {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                color: #666666;
+                padding-bottom: 2rem;
+                box-sizing: border-box;
+                background: url(../img/rentalList/xin.png) no-repeat center 1.7rem;
+                background-size: 2.5rem 2.5rem;
+            }
+        }
+
+        >div:nth-of-type(4) {
+            width: 100%;
+
+            >ul {
+                width: 100%;
+                height: 12rem;
+                font-size: 1.4rem;
+                border-bottom: 1px solid #dcdcdc;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+
+
+                >li {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                    >p {
+                        margin-bottom: 1rem;
+                    }
+
+                    >P:nth-of-type(2) {
+                        color: #ff8a00;
+                    }
+                }
+
+
+            }
+        }
+
+        >div:nth-of-type(5) {
+            width: 100%;
+            border-bottom: 1px solid #dcdcdc;
+            padding: 0 2rem;
+            box-sizing: border-box;
+            background-color: white;
+
+            >ul {
+                width: 100%;
+                font-size: 1.4rem;
+                display: flex;
+                flex-wrap: wrap;
+
+                >li {
+                    width: 50%;
+                    height: 4.5rem;
+                    line-height: 4.5rem;
+                    border-bottom: 1px solid #dcdcdc;
+                    box-sizing: border-box;
+                }
+
+
+            }
+        }
+
+        >.jingji {
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+            font-size: 1.4rem;
+
+            >div {
+                width: 100%;
+                background-color: white;
+                border: 1px solid #dcdcdc;
+                box-sizing: border-box;
+                margin-bottom: 1rem;
+
+                >h2 {
+                    color: #ff8a00;
+                    padding: 1.4rem;
+                    border-bottom: 1px solid #dcdcdc;
+                    background: url(../img/rentalList/right.png) no-repeat 32.4rem center;
+                    background-size: 1.4rem 2rem;
+                }
+
+                >p {
+                    width: 100%;
+                    padding: 1rem;
+
+                }
+            }
+
+            .location {
+                width: 100%;
+                padding: 1rem;
+                box-sizing: border-box;
+
+                >div {
+                    width: 100%;
+                    border: 1px solid #dcdcdc;
+                    box-sizing: border-box;
+                    font-size: 1.4rem;
+
+                    >h3 {
+                        padding: 1rem 0.5rem;
+                    }
+
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .xc {
+                color: #ff8a00;
+            }
+        }
+
+        /*联系人电话  */
+        >.linkman {
+            width: 100%;
+            height: 7rem;
+            background-color: #ffffff;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+
+            >div {
+                flex: 1;
+
+
+            }
+
+            >div:nth-of-type(1) {
+                >img {
+                    width: 70%;
+                }
+            }
+
+            >div:nth-of-type(2) {
+                flex: 3;
+            }
+
+            >div:nth-of-type(3),
+            >div:nth-of-type(4) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                >img {
+                    width: 55%;
+                }
+            }
+
+            >div:nth-of-type(3) {
+                color: #5dcb96;
+            }
+
+            >div:nth-of-type(4) {
+                color: #5baede;
+            }
+        }
+
+
+    }
+
+    /* 底部 */
+    footer {
+        width: 100%;
+        background-color: #2f3130;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+
+        >p {
+            width: 100%;
+            height: 4.5rem;
+            font-size: 1.6rem;
+            color: #939494;
+            font-weight: bold;
+            line-height: 4.5rem;
+            border-bottom: 1px solid #3e403f;
+            box-sizing: border-box;
+
+            >a {
+                color: #939494;
+            }
+        }
+
+        >div:nth-of-type(1) {
+            width: 100%;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+
+            >div {
+                flex: 1;
+                display: flex;
+                font-size: 1.4rem;
+                color: #939494;
+                margin-left: 1rem;
+
+                >img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+
+        >div:nth-of-type(2) {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            color: #939494;
+            margin-top: 1rem;
+
+            >p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+
+    /* 空div */
+    .kong {
+        width: 100%;
+        height: 12rem;
+    }
+}
