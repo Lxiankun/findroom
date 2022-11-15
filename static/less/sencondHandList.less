@@ -16,7 +16,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-
+    position: relative;
     header {
         width: 100%;
         height: 5rem;
@@ -92,12 +92,13 @@
 
     nav {
         width: 100%;
+        z-index: 3;
         // height: 3rem;
         border-bottom: 1px solid #ccc;
         border-top: 1px solid #ccc;
         font-size: 1.4rem;
         background-color: #f0f0f0;
-
+        
         &>ul {
             width: 100%;
             height: 4rem;
@@ -113,7 +114,12 @@
                 line-height: 4rem;
                 text-align: center;
                 position: relative;
-
+                &:hover span{
+                    border-top: .5rem solid transparent;
+                    border-left: .5rem solid transparent;
+                    border-right: .5rem solid transparent;
+                    border-bottom: .5rem solid #ff8a00;
+                }
                 &>a {
                     display: block;
                     width: 100%;
@@ -156,9 +162,9 @@
                     // background-color: green;
                     .nav {
                         width: 9rem;
-                        height: 100%;
+                        height: 33rem;
                         margin-right: 1px solid #ccc;
-
+                        background-color: #f0f0f0;
                         li {
                             width: 100%;
                             height: 4rem;
@@ -404,6 +410,16 @@
             }
         }
     }
+    .mb{
+        position: absolute;
+        display:none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        height:100%;
+        background-color: rgba(0, 0, 0, 0.638);
+    }
     /* 页尾 */
     footer {
         width: 100%;
@@ -465,5 +481,6 @@
                 margin-bottom: 0.5rem;
             }
         }
+   
     }
 }

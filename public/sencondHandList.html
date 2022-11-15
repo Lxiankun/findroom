@@ -15,7 +15,7 @@
         <header>
             <div class="title"><img src="../static/img/index/logo.jpg" alt=""></div>
             <div class="icon">
-                <a href="#"><img src="../static/img/index/my.jpg" alt=""></a>
+                <a href="./my.html"><img src="../static/img/index/my.jpg" alt=""></a>
                 <a href="#"><img src="../static/img/index/xiazai.jpg" alt=""></a>
             </div>
         </header>
@@ -180,6 +180,7 @@
     
             </ul>
         </div>
+    <div class="mb"></div>
          <!-- 底部 -->
     <footer>
         <p>北京找房无忧 > <a href="#">首页</a></p>
@@ -218,7 +219,9 @@
     let info_=document.querySelectorAll('.info');
     let tabs=document.querySelectorAll('.tab');
     let tabs_=document.querySelector('.tabs');
+    let nav_=document.querySelector('nav');
     let body_=document.body;
+    let mb=document.querySelector('.mb');
     for(let i=0;i<bars.length;i++){
         bars[i].setAttribute('data-index',i);
     }
@@ -230,14 +233,20 @@
             tabs[i].style.display='none'
         }
         tabs[index].style.display='block'
+        nav_.style.position='fixed';
+        nav_.style.left='0'
+        nav_.style.top='0'
+        mb.style.display='block'
+
     })
     }
-    touch.on(info_,'tap',function(e){
-       
+    touch.on(mb,'tap',function(e){
         window.Event? window.event.cancelBubble=true:event.stopPropagation;
         tabs.forEach((item)=>{
             item.style.display='none'
         })
+        nav_.style.position='static'
+        mb.style.display='none'
     })
     // swipeleft 左滑动
     touch.on(body_,'swipeleft',function(ev){
@@ -251,7 +260,6 @@
     });
     // doubletap 双击
     touch.on(body_,'doubletap',function(ev){
-        console.log('双击');
         body_.style.transform=='scale(1.2)'?body_.style.transform='scale(1)':body_.style.transform='scale(1.2)';
         
     });
