@@ -16,7 +16,12 @@ header {
 header .title {
   flex: 1;
 }
-header .title > img {
+header .title a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+header .title a > img {
   height: 100%;
 }
 header .icon {
