@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 1000px;
+  /* 页尾 */
+}
+.box header {
+  width: 100%;
+  height: 5rem;
+  padding: 0.5rem 3rem;
+  display: flex;
+  background-color: #ff8a00;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.box header .title {
+  flex: 1;
+}
+.box header .title > img {
+  height: 100%;
+}
+.box header .icon {
+  width: 10rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.box header .icon a {
+  width: 3rem;
+  height: 3.4rem;
+}
+.box header .icon a img {
+  width: 100%;
+  height: 100%;
+}
+.box .search {
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 6rem;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+.box .search input {
+  width: 100%;
+  height: 4rem;
+  text-indent: 1rem;
+}
+.box .search span {
+  position: absolute;
+  right: 7rem;
+  top: 1rem;
+  font-size: 1.6rem;
+  line-height: 4rem;
+}
+.box .search a {
+  position: absolute;
+  right: 4rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 4rem;
+  top: 1.5rem;
+  font-size: 1.6rem;
+}
+.box .search a img {
+  width: 2rem;
+  height: 2rem;
+}
+.box nav {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  font-size: 1.4rem;
+  background-color: #f0f0f0;
+}
+.box nav > ul {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.box nav > ul > li {
+  width: 7rem;
+  height: 100%;
+  line-height: 4rem;
+  text-align: center;
+  position: relative;
+}
+.box nav > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 4rem;
+}
+.box nav > ul > li > span {
+  position: absolute;
+  right: -0.5rem;
+  top: 1.5rem;
+  border-top: 0.5rem solid #939494;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+.box nav .tabs {
+  width: 100%;
+}
+.box nav .tabs .tabox1 {
+  width: 100%;
+  height: 30rem;
+  display: none;
+}
+.box nav .tabs .tabox1 .tab1 {
+  width: 100%;
+  height: 33rem;
+  display: flex;
+  border-right: 1px solid gray;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+.box nav .tabs .tabox1 .tab1 .nav {
+  width: 9rem;
+  height: 100%;
+  margin-right: 1px solid #ccc;
+}
+.box nav .tabs .tabox1 .tab1 .nav li {
+  width: 100%;
+  height: 4rem;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+.box nav .tabs .tabox1 .tab1 .nav li:nth-of-type(1) {
+  color: #ff8a00;
+  background-color: #fff;
+}
+.box nav .tabs .tabox1 .tab1 .nav_info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  background-color: #fff;
+}
+.box nav .tabs .tabox1 .tab1 .nav_info > li {
+  width: 50%;
+  line-height: 4rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.box nav .tabs .tabox1 .tab1 .nav_info > li:nth-of-type(1),
+.box nav .tabs .tabox1 .tab1 .nav_info > li:nth-of-type(3),
+.box nav .tabs .tabox1 .tab1 .nav_info > li:nth-of-type(5) {
+  color: #ff8a00;
+}
+.box nav .tabs .tabox2 {
+  width: 100%;
+  display: none;
+  height: 30rem;
+}
+.box nav .tabs .tabox2 .tab2 {
+  width: 100%;
+  background-color: #fff;
+  height: 30rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.box nav .tabs .tabox2 .tab2 li {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: 1px solid #ccc;
+}
+.box nav .tabs .tabox3 {
+  width: 100%;
+  display: none;
+  height: 30rem;
+}
+.box nav .tabs .tabox3 .tab3 {
+  width: 100%;
+  background-color: #fff;
+  height: 30rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.box nav .tabs .tabox3 .tab3 li {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+.box nav .tabs .tabox3 .tab3 li span {
+  font-size: 1.4rem;
+}
+.box nav .tabs .tabox3 .tab3 li input {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+  background-color: #ff8a00;
+  color: #ff8a00;
+  margin-right: 2rem;
+}
+.box nav .tabs .tabox3 .tab3 > li:nth-last-of-type(1) {
+  width: 100%;
+  height: 4rem;
+  background-color: #ff8a00;
+  color: #fff;
+  display: block;
+}
+.box nav .tabs .tabox4 {
+  width: 100%;
+  display: none;
+  background: #fff;
+  padding: 1rem 2rem;
+}
+.box nav .tabs .tabox4 dl {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+.box nav .tabs .tabox4 dl dt {
+  width: 100%;
+  height: 4rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 4rem;
+}
+.box nav .tabs .tabox4 dl dd {
+  width: 23%;
+  border: 1px solid #cccccc;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 1%;
+  height: 3rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+.box nav .tabs .tab {
+  display: block;
+}
+.box .info {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2rem;
+}
+.box .info ul {
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.box .info ul li {
+  width: 100%;
+  box-sizing: border-box;
+  height: 16rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid red;
+}
+.box .info ul li:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.box .info ul li img {
+  height: 90%;
+}
+.box .info ul li .house_info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin-left: 1rem;
+  height: 100%;
+}
+.box .info ul li .house_info h3 {
+  width: 100%;
+  font-size: 1.7rem;
+  line-height: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.box .info ul li .house_info p {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 3rem;
+  font-size: 1.4rem;
+  color: #8b8b8b;
+}
+.box .info ul li .house_info p strong {
+  color: #ff8a00;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.box .info ul li .house_info p span {
+  font-size: 1.4rem;
+}
+.box .info ul li .house_info p.info2 span {
+  color: #8b8b8b;
+}
+.box footer {
+  width: 100%;
+  background-color: #2f3130;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.box footer > p {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  color: #939494;
+  font-weight: bold;
+  line-height: 4.5rem;
+  border-bottom: 1px solid #3e403f;
+  box-sizing: border-box;
+}
+.box footer > p > a {
+  color: #939494;
+}
+.box footer > div:nth-of-type(1) {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+.box footer > div:nth-of-type(1) > div {
+  flex: 1;
+  display: flex;
+  font-size: 1.4rem;
+  color: #939494;
+  margin-left: 1rem;
+}
+.box footer > div:nth-of-type(1) > div > img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1.5rem;
+}
+.box footer > div:nth-of-type(2) {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #939494;
+  margin-top: 1rem;
+}
+.box footer > div:nth-of-type(2) > p {
+  margin-bottom: 0.5rem;
+}
