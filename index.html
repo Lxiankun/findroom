@@ -17,7 +17,7 @@
         <header>
             <div class="title"><img src="../static/img/index/logo.jpg" alt=""></div>
             <div class="icon">
-                <a href="#"><img src="../static/img/index/my.jpg" alt=""></a>
+                <a href="./public/my.html"><img src="../static/img/index/my.jpg" alt=""></a>
                 <a href="#"><img src="../static/img/index/xiazai.jpg" alt=""></a>
             </div>
         </header>
@@ -155,3 +155,24 @@
 </body>
 
 </html>
+<script src="./static/js/touch.min.js"></script>
+<script src="./static/js/index.js"></script>
+<script>
+     let body_=document.body;
+     // swipeleft 左滑动
+    touch.on(body_,'swipeleft',function(ev){
+        window.history.go(-1);
+
+    });
+    // 右滑动
+    touch.on(body_,'swiperight',function(ev){
+        window.history.go(1);
+        
+    });
+    // doubletap 双击
+    touch.on(body_,'doubletap',function(ev){
+        console.log('双击');
+        body_.style.transform=='scale(1.2)'?body_.style.transform='scale(1)':body_.style.transform='scale(1.2)';
+        
+    });
+</script>
