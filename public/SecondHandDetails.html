@@ -151,3 +151,27 @@
 
 </html>
 <script src="../static/js/rem.js"></script>
+<script src="../static/js/touch.min.js"></script>
+<script>
+     let body_=document.body;
+     let title_=document.querySelector('.title');
+     touch.on(body_,'swipeleft',function(ev){
+        window.history.go(-1);
+
+    });
+    // 右滑动
+    touch.on(body_,'swiperight',function(ev){
+        window.history.go(1);
+        
+    });
+    // doubletap 双击
+    touch.on(body_,'doubletap',function(ev){
+        console.log('双击');
+        body_.style.transform=='scale(1.2)'?body_.style.transform='scale(1)':body_.style.transform='scale(1.2)';
+        
+    });
+    title_.onclick=function(){
+        window.Event? window.event.cancelBubble=true:event.stopPropagation;
+        window.location.href='../index.html';
+    }
+</script>

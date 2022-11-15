@@ -9,7 +9,6 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  height: 1000px;
   /* 页尾 */
 }
 .box header {
@@ -265,9 +264,6 @@
   height: 3rem;
   line-height: 3rem;
   margin-bottom: 1rem;
-}
-.box nav .tabs .tab {
-  display: block;
 }
 .box .info {
   width: 100%;

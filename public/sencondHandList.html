@@ -23,7 +23,7 @@
         <div class="search">
             <input type="text" placeholder="请输入小区名或商圈名称">
             <span>|</span>
-            <a href="#"><img src="../static/img/SecondHandList/search_03.png" alt=""></a>
+            <a href="./SecondHandDetails.html"><img src="../static/img/SecondHandList/search_03.png" alt=""></a>
         </div>
         <!-- 导航栏 勾选项 -->
         <nav>
@@ -61,7 +61,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="tabox2   " >
+                <div class="tabox2 tab  " >
                     <ul class="tab2">
                         <li>不限</li>
                         <li>100万以下</li>
@@ -72,18 +72,18 @@
                         <li>自定义价格</li>
                     </ul>
                 </div>
-                <div class="tabox3 " >
+                <div class="tabox3 tab " >
                     <ul class="tab3">
                         <li><span>不限</span></li>
-                        <li><span>1室</span> <input type="checkbox" name="" id=""></li>
-                        <li><span>2室</span> <input type="checkbox" name="" id=""></li>
-                        <li><span>3室</span> <input type="checkbox" name="" id=""></li>
-                        <li><span>4室</span> <input type="checkbox" name="" id=""></li>
-                        <li><span>5室</span> <input type="checkbox" name="" id=""></li>
+                        <li><span>1室</span> <input type="checkbox" name="" id="" class="checkbox"></li>
+                        <li><span>2室</span> <input type="checkbox" name="" id="" class="checkbox"></li>
+                        <li><span>3室</span> <input type="checkbox" name="" id="" class="checkbox"></li>
+                        <li><span>4室</span> <input type="checkbox" name="" id="" class="checkbox"></li>
+                        <li><span>5室</span> <input type="checkbox" name="" id="" class="checkbox"></li>
                         <li>确定</li>
                     </ul>
                 </div>
-                <div class="tabox4  " >
+                <div class="tabox4  tab " >
                     <div class="tab4">
                        <dl>
                         <dt>区域</dt>
@@ -209,3 +209,51 @@
 
 </html>
 <script src="../static/js/rem.js"></script>
+<script src="../static/js/touch.min.js">
+
+</script>
+
+<script>
+    let bars=document.querySelectorAll('.bar');
+    let info_=document.querySelectorAll('.info');
+    let tabs=document.querySelectorAll('.tab');
+    let tabs_=document.querySelector('.tabs');
+    let body_=document.body;
+    for(let i=0;i<bars.length;i++){
+        bars[i].setAttribute('data-index',i);
+    }
+    for(let item of bars){
+        touch.on(item,'tap',function(e){
+        window.Event? window.event.cancelBubble=true:event.stopPropagation;
+        let index=item.getAttribute('data-index');
+        for(let i =0;i<bars.length;i++){
+            tabs[i].style.display='none'
+        }
+        tabs[index].style.display='block'
+    })
+    }
+    touch.on(info_,'tap',function(e){
+       
+        window.Event? window.event.cancelBubble=true:event.stopPropagation;
+        tabs.forEach((item)=>{
+            item.style.display='none'
+        })
+    })
+    // swipeleft 左滑动
+    touch.on(body_,'swipeleft',function(ev){
+        window.history.go(-1);
+
+    });
+    // 右滑动
+    touch.on(body_,'swiperight',function(ev){
+        window.history.go(1);
+        
+    });
+    // doubletap 双击
+    touch.on(body_,'doubletap',function(ev){
+        console.log('双击');
+        body_.style.transform=='scale(1.2)'?body_.style.transform='scale(1)':body_.style.transform='scale(1.2)';
+        
+    });
+</script>
+<script src="../static/js/index.js"></script>
