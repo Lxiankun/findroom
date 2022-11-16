@@ -5,9 +5,15 @@
   list-style: none;
   text-decoration: none;
 }
+body,
+html {
+  width: 100%;
+  font-size: 10px;
+}
 .box {
   width: 100%;
   max-width: 700px;
+  min-width: 250px;
   /* 头部 */
   /* 主体 */
 }
@@ -115,7 +121,10 @@
   border: 1px solid #ccc;
 }
 .box main .tabs .tab1 div {
-  padding: 2rem 2rem ;
+  padding: 2rem 2rem 0rem ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .box main .tabs .tab1 div button {
   width: 100%;
@@ -125,6 +134,18 @@
   background-color: #ff8a00;
   color: #fff;
   font-size: 1.6rem;
+}
+.box main .tabs .tab1 div a {
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
+  color: #666666;
+}
+.box main .tabs .tab1 div .yellow {
+  color: #ff8a00;
+}
+.box main .tabs .tab1 div:nth-last-of-type(1) {
+  padding: 0  2rem ;
 }
 .box main .tabs .active {
   display: block;

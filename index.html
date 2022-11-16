@@ -159,19 +159,30 @@
 <script src="./static/js/index.js"></script>
 <script>
     let body_ = document.body;
+    let icon1 = document.querySelector('.icon1');
+    let add = document.querySelector('.add');
+
     // swipeleft 左滑动
-    touch.on(body_, 'swipeleft', function (ev) {
+    touch.on(body_, 'swipeleft', function (e) {
         window.history.go(-1);
 
     });
     // 右滑动
-    touch.on(body_, 'swiperight', function (ev) {
+    touch.on(body_, 'swiperight', function (e) {
         window.history.go(1);
 
     });
+    touch.on(icon1, 'tap', function (e) {
+        e = e || window.event;
+        window.event ? e.cancelBubble = true : e.stopPropagation();
+        add.style.display = 'none'
+    });
+
+
     // doubletap 双击
-    touch.on(body_, 'doubletap', function (ev) {
-        console.log('双击');
+    touch.on(body_, 'doubletap', function (e) {
+        e = e || window.event;
+        window.event ? e.cancelBubble = true : e.stopPropagation();
         body_.style.transform == 'scale(1.2)' ? body_.style.transform = 'scale(1)' : body_.style.transform = 'scale(1.2)';
 
     });
