@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 10px;
+  background-color: #f5f5f5;
+}
+.box {
+  max-width: 625px;
+  min-width: 300px;
+  margin: 0 auto;
+  /* 头部 */
+  /* 主体 */
+}
+.box header {
+  width: 100%;
+  height: 5rem;
+  padding: 0.5rem 4rem;
+  display: flex;
+  background-color: #ff8a00;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box header .title {
+  flex: 1;
+}
+.box header .title > img {
+  height: 100%;
+}
+.box header .icon {
+  width: 10rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.box header .icon a {
+  width: 3rem;
+  height: 3.4rem;
+}
+.box header .icon a img {
+  width: 100%;
+  height: 100%;
+}
+.box main {
+  width: 100%;
+  margin-bottom: 2rem;
+  /* 我的登录 */
+  /* 退出登录 */
+}
+.box main > div:nth-of-type(1) {
+  width: 100%;
+  padding: 0 2rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  background-color: white;
+  border-bottom: 1px solid #c5c5c5;
+  box-sizing: border-box;
+}
+.box main > div:nth-of-type(1) > span > a {
+  color: black;
+}
+.box main > div:nth-of-type(1) > span:nth-of-type(1) > a:nth-of-type(1) {
+  font-weight: bold;
+}
+.box main > div:nth-of-type(2) {
+  width: 100%;
+  height: 16rem;
+  background: url(../img/my/bg1.png) no-repeat;
+  background-size: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+}
+.box main > div:nth-of-type(2) > img {
+  width: 6.2rem;
+  height: 6.2rem;
+}
+.box main > div:nth-of-type(2) > div {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: white;
+}
+.box main > ul {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 1.5rem;
+}
+.box main > ul > li {
+  width: 100%;
+  height: 4rem;
+  border-bottom: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: url(../img/my/right.png) no-repeat right center;
+  background-size: 0.7rem;
+}
+.box main > ul > li > img {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 1rem;
+}
+.box main > ul > li > a {
+  color: #666666;
+  font-size: 1.4rem;
+}
+.box main > div:nth-of-type(3) {
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  margin-top: 2.5rem;
+}
+.box main > div:nth-of-type(3) > button {
+  width: 100%;
+  height: 4rem;
+  outline: none;
+  border: 1px solid #dcdcdc;
+  color: #ff8a00;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+  background-color: white;
+}
