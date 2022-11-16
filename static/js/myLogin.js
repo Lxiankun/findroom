@@ -9,5 +9,6 @@ if (getCookie('rember_')) {
 
 // 点击退出登录时跳转到未登录界面
 touch.on(tuichu, 'tap', function () {
+    claerCookie();
     window.location.href = '../../public/my.html';
 });

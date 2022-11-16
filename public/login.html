@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+
     <script src="../static/js/rem.js"></script>
     <link rel="stylesheet" href="../static/less/login.css">
 </head>
@@ -39,7 +39,7 @@
 
                     </ul>
                     <div><button class="login">验证并登录</button></div>
-                    <div><a href="./register.html" class="yellow">立即注册</a><a href="#">忘记密码</a> </div>
+                    <div><a href="./register.html" class="yellow">立即注册</a><a href="./findPassword.html">忘记密码</a> </div>
                 </div>
                 <div class="tab1 tab ">
 
@@ -51,7 +51,7 @@
 
                     </ul>
                     <div><button id="register">立即注册</button></div>
-                    <div><a href="./register.html" class="yellow">立即注册</a><a href="#">忘记密码</a> </div>
+                    <div><a href="./register.html" class="yellow">立即注册</a><a href="./findPassword.html">忘记密码</a> </div>
                 </div>
             </section>
         </main>
@@ -86,7 +86,7 @@
     let timer = null;
     let index = 6;
     let newCode = '';
-// 注册模块
+    // 注册模块
     register.addEventListener('click', function (e) {
         window.Event ? window.event.cancelBubble = true : event.stopPropagation();
         if (!getCodeState) {
@@ -109,8 +109,8 @@
         }
     })
     //  登录框 密码和手机号
-    let login_phone=document.querySelector('.phone');
-    let login_password=document.querySelector('.password');
+    let login_phone = document.querySelector('.phone');
+    let login_password = document.querySelector('.password');
     // 自动登录
     window.onload = function () {
         if (getCookie('rember_')) {
@@ -118,24 +118,24 @@
             login_password.value = getCookie('password')
         }
     }
-    let login_ =document.querySelector('.login')
+    let login_ = document.querySelector('.login')
     let gex_password = /^\w{6,12}$/
-// 登录模块
+    // 登录模块
 
-login_.addEventListener('click', function (e) {
+    login_.addEventListener('click', function (e) {
         e = e || window.event;
         window.event ? e.cancelBubble = true : e.stopPropagation();
-            if (!gex_phone.test(login_phone.value)) {
-                alert('输入合法手机号')
-            } else if (!gex_password.test(login_password.value)) {
-                alert('密码不合法')
-            } else if (gex_phone.test(login_phone.value) && gex_password.test(login_password.value)&& getCookie('password')==login_password.value &&getCookie('phone')==login_phone.value ) {
+        if (!gex_phone.test(login_phone.value)) {
+            alert('输入合法手机号')
+        } else if (!gex_password.test(login_password.value)) {
+            alert('密码不合法')
+        } else if (gex_phone.test(login_phone.value) && gex_password.test(login_password.value) && getCookie('password') == login_password.value && getCookie('phone') == login_phone.value) {
 
-                window.location.href='../index.html'
-            } else {
-                alert('输入不合法')
-            }
-        
+            window.location.href = '../index.html'
+        } else {
+            alert('输入不合法')
+        }
+
     })
 
 
