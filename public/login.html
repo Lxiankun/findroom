@@ -129,7 +129,7 @@ login_.addEventListener('click', function (e) {
                 alert('输入合法手机号')
             } else if (!gex_password.test(login_password.value)) {
                 alert('密码不合法')
-            } else if (gex_phone.test(login_phone.value) && gex_password.test(login_password.value)) {
+            } else if (gex_phone.test(login_phone.value) && gex_password.test(login_password.value)&& getCookie('password')==login_password.value &&getCookie('phone')==login_phone.value ) {
 
                 window.location.href='../index.html'
             } else {
