@@ -15,7 +15,7 @@
         <header>
             <div class="title"><a href="#"><img src="../static/img/index/logo.jpg" alt=""></a></div>
             <div class="icon">
-                <a href="./my.html"><img src="../static/img/index/my.jpg" alt=""></a>
+                <a href="./myLogin.html"><img src="../static/img/index/my.jpg" alt=""></a>
                 <a href="#"><img src="../static/img/index/xiazai.jpg" alt=""></a>
             </div>
         </header>
@@ -53,7 +53,7 @@
     let getCodeState = false;
     let gex_password = /^\w{6,12}$/
     // 自动写入
-   
+
     // 注册功能
     register.addEventListener('click', function (e) {
         e = e || window.event;
@@ -68,11 +68,11 @@
             } else if (!gex_password.test(password.value)) {
                 alert('密码不合法')
             } else if (gex_phone.test(phone.value) && gex_password.test(password.value)) {
-                
+
                 setCookie('phone', phone.value, 1);
                 setCookie('password', password.value, 1);
                 setCookie('rember_', true, 1);
-                window.location.href='./login.html'
+                window.location.href = './login.html'
             } else {
                 alert('输入不合法')
             }
