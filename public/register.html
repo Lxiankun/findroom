@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/less/register.css">
+    <script src=""></script>
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <div class="title"><a href="#"><img src="../static/img/index/logo.jpg" alt=""></a></div>
+            <div class="icon">
+                <a href="./my.html"><img src="../static/img/index/my.jpg" alt=""></a>
+                <a href="#"><img src="../static/img/index/xiazai.jpg" alt=""></a>
+            </div>
+        </header>
+        <!-- 主体 -->
+        <main>
+            <div class="main_title">
+                <span>首页</span>></span><span>我的</span>></span><span>注册</span>
+            </div>
+            <section class="register">
+
+                <ul>
+                    <li><input type="text" class="phone" placeholder="请输入手机号码"><span class="getcode">发送验证码</span>
+                    </li>
+                    <li><input type="text" class="code" placeholder="请输入短信中的验证码"></li>
+                    <li><input type="text" class="password" placeholder="请输入密码"></li>
+
+                </ul>
+                <div><button class="register_">立即注册</button></div>
+
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
+<script src="../static/js/rem.js"></script>
+<script src="../static/js/Mycookie(1).js"></script>
+<script>
+    let register = document.querySelector('.register_');
+    let phone = document.querySelector('.phone');
+    let gex_phone = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/
+    let code = document.querySelector('.code');
+    let getCode = document.querySelector('.getcode');
+    let password = document.querySelector('.password');
+    let getCodeState = false;
+    let gex_password = /^\w{6,12}$/
+    // 自动写入
+   
+    // 注册功能
+    register.addEventListener('click', function (e) {
+        e = e || window.event;
+        window.event ? e.cancelBubble = true : e.stopPropagation();
+        if (!getCodeState) {
+            alert('请获取验证码');
+        } else {
+            if (!gex_phone.test(phone.value)) {
+                alert('输入合法手机号')
+            } else if (newCode != code.value || code.value == null || code.value == '') {
+                alert('验证码不正确')
+            } else if (!gex_password.test(password.value)) {
+                alert('密码不合法')
+            } else if (gex_phone.test(phone.value) && gex_password.test(password.value)) {
+                
+                setCookie('phone', phone.value, 1);
+                setCookie('password', password.value, 1);
+                setCookie('rember_', true, 1);
+                window.location.href='./login.html'
+            } else {
+                alert('输入不合法')
+            }
+        }
+    })
+    let timer = null;
+    let index = 6;
+    let newCode = '';
+    // 获取验证码
+    getCode.addEventListener('click', function (e) {
+        e = e || window.event;
+        window.event ? e.cancelBubble = true : e.stopPropagation();
+
+        clearInterval(timer);
+
+        timer = setInterval(() => {
+            index--;
+            this.innerHTML = `${index}秒后可重发`;
+
+
+            if (index == 0) {
+                this.innerHTML = '发送验证码';
+                index = 6;
+                newCode = (Math.floor(Math.random() * 10000) + 1)
+                newCode < 1000 ? newCode = 1000 : newCode;
+                alert(newCode)
+                getCodeState = true;
+                clearInterval(timer);
+            }
+        }, 1000);
+    });
+
+
+</script>

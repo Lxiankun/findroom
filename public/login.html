@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/less/login.css">
+    <script src="../static/js/rem.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <div class="title"><a href="../index.html"><img src="../static/img/index/logo.jpg" alt=""></a></div>
+            <div class="icon">
+                <a href="./my.html"><img src="../static/img/index/my.jpg" alt=""></a>
+                <a href="#"><img src="../static/img/index/xiazai.jpg" alt=""></a>
+            </div>
+        </header>
+        <!-- 主体 -->
+        <main>
+            <div class="main_title">
+                <span>首页</span>></span><span>我的</span>></span><span>登录</span>
+            </div>
+            <ul class="nav">
+                <li class="bar active">普通登录</li>
+                <li class="bar">验证码快捷登录</li>
+            </ul>
+            <section class="tabs">
+                <div class="tab1 tab active">
+
+                    <ul>
+                        <li><input type="text" class="phone" placeholder="请输入手机号码">
+                        </li>
+                        <li><input type="text" class="password" placeholder="请输入密码"></li>
+
+                    </ul>
+                    <div><button class="login">验证并登录</button></div>
+
+                </div>
+                <div class="tab1 tab ">
+
+                    <ul>
+                        <li><input type="text" class="reg_phone" placeholder="请输入手机号码"><span
+                                class="getcode">发送验证码</span>
+                        </li>
+                        <li><input type="text" class="reg_code" placeholder="请输入短信中的验证码"></li>
+
+                    </ul>
+                    <div><button id="register">立即注册</button></div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
+
+<script src="../static/js/Mycookie(1).js"></script>
+<script>
+    let bar = document.querySelectorAll('.bar');
+    let tab = document.querySelectorAll('.tab');
+    for (const index in bar) {
+        bar[index].onclick = function () {
+            bar.forEach((item) => {
+                item.className = 'bar';
+            })
+            this.className = 'bar active';
+            tab.forEach((item) => {
+                item.className = 'tab1 tab';
+            })
+            tab[index].className = 'tab1 tab active';
+        }
+    }
+    // 快速注册
+    let register = document.querySelector('#register');
+    let phone = document.querySelector('.reg_phone');
+    let getCode = document.querySelector('.getcode');
+    let reg_code = document.querySelector('.reg_code');
+    let getCodeState = false;
+    let gex_phone = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/
+    let timer = null;
+    let index = 6;
+    let newCode = '';
+// 注册模块
+    register.addEventListener('click', function (e) {
+        window.Event ? window.event.cancelBubble = true : event.stopPropagation();
+        if (!getCodeState) {
+
+            console.log('请获取验证码');
+        } else {
+            if (gex_phone.test(phone.value) && newCode == reg_code.value && reg_code.value != null && reg_code.value != '') {
+                newCode = ''
+                window.location.href = '../index.html'
+            } else if (!gex_phone.test(phone.value)) {
+
+                alert('请输入正确的手机号')
+            } else if (newCode != reg_code.value && getCode.innerHTML == '发送验证码') {
+
+                alert('请获取验证码')
+            } else {
+                alert('输入不合法')
+
+            }
+        }
+    })
+    //  登录框 密码和手机号
+    let login_phone=document.querySelector('.phone');
+    let login_password=document.querySelector('.password');
+    // 自动登录
+    window.onload = function () {
+        if (getCookie('rember_')) {
+            login_phone.value = getCookie('phone')
+            login_password.value = getCookie('password')
+        }
+    }
+    let login_ =document.querySelector('.login')
+    let gex_password = /^\w{6,12}$/
+// 登录模块
+
+login_.addEventListener('click', function (e) {
+        e = e || window.event;
+        window.event ? e.cancelBubble = true : e.stopPropagation();
+            if (!gex_phone.test(login_phone.value)) {
+                alert('输入合法手机号')
+            } else if (!gex_password.test(login_password.value)) {
+                alert('密码不合法')
+            } else if (gex_phone.test(login_phone.value) && gex_password.test(login_password.value)) {
+
+                window.location.href='../index.html'
+            } else {
+                alert('输入不合法')
+            }
+        
+    })
+
+
+
+    // 获取验证码
+    getCode.addEventListener('click', function (e) {
+        clearInterval(timer);
+
+        timer = setInterval(() => {
+            index--;
+            this.innerHTML = `${index}秒后可重发`;
+
+
+            if (index == 0) {
+                this.innerHTML = '发送验证码';
+                index = 6;
+                newCode = (Math.floor(Math.random() * 10000) + 1)
+                newCode < 1000 ? newCode = 1000 : newCode;
+                getCodeState = true;
+                alert(newCode)
+                clearInterval(timer);
+            }
+        }, 1000);
+    });
+    // 登录功能
+    let login = document.querySelector('.login');
+    login.addEventListener('click', function (e) {
+        window.Event ? window.event.cancelBubble = true : event.stopPropagation();
+    });
+</script>
+<script src="../static/js/touch.min.js"></script>
+<script>
+    let body_ = document.body;
+    touch.on(body_, 'swipeleft', function (ev) {
+        window.history.go(-1);
+
+    });
+    // 右滑动
+    touch.on(body_, 'swiperight', function (ev) {
+        window.history.go(1);
+
+    });
+    // doubletap 双击
+    touch.on(document, 'doubletap', function (ev) {
+        body_.style.transform == 'scale(1.2)' ? body_.style.transform = 'scale(1)' : body_.style.transform = 'scale(1.2)';
+
+    });
+</script>
